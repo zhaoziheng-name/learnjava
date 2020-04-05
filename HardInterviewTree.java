@@ -59,6 +59,7 @@ public class HardInterviewTree {
     // result 0 号元素对应着第 0 层节点
     // result 1 号元素对应着第 1 层节点
     // ......
+    result.clear();
     static List<List<Integer>> result = new ArrayList<>();
     public List<List<Integer>> levelOrder(TreeNode root) {
         // 此处由于要把每一层的节点放到一个单独的 List 中,所以之前的层序遍历方式就不行了
