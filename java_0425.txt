@@ -1,0 +1,89 @@
+select name, chinese from exam_result where chinese >= 80 and chinese <= 90;
+
+select name, chinese from exam_result where chinese between 80 and 90;
+
+ select name, math from exam_result where math in (50, 60, 65, 80);
+
+select name, math from exam_result where math = 50 or math = 60 or math = 65 or math = 80;
+
+ select * from exam_result where name like 'z%';
+
+select name from exam_result where name = 'zzh';
+
+select name, chinese, math, english from exam_result where name = 'zzh';
+
+select * from exam_result where name like 'zz%';
+
+select * from exam_result where name like '%zz%';
+
+ select * from exam_result where chinese <=> null;
+
+ select name, chinese from exam_result where chinese <=> null;
+
+select * from exam_result limit 3;
+
+ select * from exam_result limit 3 offset 0;
+
+ select * from exam_result limit 3 offset 3;
+
+select * from exam_result limit 3 offset 6;
+
+select * from exam_result where math > 70 order by math;
+
+update exam_result set chinese = 90, english = 90 where name = 'zzh';
+
+ update exam_result set chinese = 77, math = 79, english = 90 where name = 'tz';
+
+select * from exam_result order by chinese + math + english;
+
+ update exam_result set math = math - 30 order by chinese + math + english limit 3;
+
+ update exam_result set math = math + 30 order by chinese + math + english limit 3;
+
+update exam_result set chinese = chinese / 2;
+
+ delete from exam_result where math < 50;
+
+ delete from exam_result where math + english between 180 and 200;
+
+delete from exam_result where math + english < 130;
+
+ insert into student values(null, 'zzh', '52749225@qq.com');
+
+create table student (
+id int not null,
+name varchar(20),
+mail varchar(30)
+);
+
+ create table student (id int unique, name varchar(20));
+
+create table student (id int, name varchar(20) default 'unknown');
+
+insert into student values(1, 'hehe');
+
+insert into student values(2, 'null');
+
+insert into student (id) values(3);
+
+ create table student (id int primary key, name varchar(20));
+
+insert into student values(null 'hehe');
+
+insert into student values(null, 'hehe');
+
+insert into student values(1, 'hehe');
+
+insert into student values(1, 'haha');
+
+ create table class (id int primary key, name varchar(20));
+
+ create table student (id int primary key, class_id int, foreign key (class_id) references class(id));
+
+insert into class values (1, 'java15');
+
+insert into class values (2, 'java16');
+
+insert into student values(1, 10); // 会报错
+
+insert into student values(1, 1);
