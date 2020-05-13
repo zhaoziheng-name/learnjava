@@ -1,0 +1,26 @@
+查找入职最晚的
+select * from employees where hire_date = (select max(hire_date) from employees);
+
+查找入职第三晚的
+select * from employees order by hire_date desc limit 2, 1;
+
+CREATE TABLE `dept_manager` (
+`dept_no` char(4) NOT NULL,
+`emp_no` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));
+
+查找各个部门当前(to_date='9999-01-01')领导当前薪水详情以及其对应部门编号dept_no
+select salaries.emp_no,salaries.salary,salaries.from_date,salaries.to_date,dept_manager.dept_no
+from salaries inner join dept_manager
+on dept_manager.emp_no = salaries.emp_no
+and dept_manager.to_date = '9999-01-01'
+and salaries.to_date = '9999-01-01';
+
