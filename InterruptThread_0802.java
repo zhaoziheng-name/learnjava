@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 package lesson3;
 
+=======
+>>>>>>> 928f254cdf8c3886bae1c2a8296b03584498cebe
 public class InterruptThread {
 
     public static void main(String[] args) throws InterruptedException {
