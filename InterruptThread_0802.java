@@ -1,5 +1,3 @@
-package lesson3;
-
 public class InterruptThread {
 
     public static void main(String[] args) throws InterruptedException {
