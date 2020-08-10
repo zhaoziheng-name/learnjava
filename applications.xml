@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 通过 bean 标签定义 bean 对象, Spring Bean 容器是通过 id 来进行管理的, id 相当于 bean 的名称
+     Spring 可以通过 id 找到 bean 对象 -->
+    <!-- 通过无参的构造方法,创建一个对象, 如果该类型没有无参的构造方法, 就会报错 -->
+    <bean id="bit"  class="java.lang.String">
+        <constructor-arg value="小比特" />
+    </bean>
+
+    <bean id="d1"   class="niko.Duck">
+        <property name="name" value="LadyGaga" />
+        <property name="age" value="18" />
+    </bean>
+</beans>
